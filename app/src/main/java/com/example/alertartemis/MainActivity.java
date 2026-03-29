@@ -66,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // Método isolado para manter o Código Limpo
     private void dispararAlarme() {
         // Feedback visual na tela
         Toast.makeText(MainActivity.this, "🚨 ALERTA DISPARADO! 🚨", Toast.LENGTH_LONG).show();

@@ -9,12 +9,20 @@
     android:background="#F7F5F0"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_wallpaper_artemis" />
+
+
     <LinearLayout
         android:id="@+id/barraSuperior"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="90dp"
         android:background="#1E3F20"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:orientation="horizontal"
         android:elevation="4dp"
         app:layout_constraintTop_toTopOf="parent">
@@ -23,57 +31,73 @@
             android:id="@+id/txtAppTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:text="ALERTA ÀRTEMIS"
+            android:fontFamily="@font/cinzel_bold"
+            android:text="Alerta Ártemis"
             android:textColor="#FFFFFF"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:fontFamily="@font/cinzel_bold" />
-
+            android:textSize="26sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnEmergencia"
+    <FrameLayout
+        android:id="@+id/containerBotao"
         android:layout_width="280dp"
         android:layout_height="280dp"
-        app:backgroundTint="#C5A059"
-        app:cornerRadius="140dp"
-        app:elevation="12dp"
-        app:icon="@drawable/ic_megafone"
-        app:iconSize="220dp"
-        app:iconTint="#FFFFFF"
-        app:iconGravity="textStart"
-        app:iconPadding="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/barraSuperior"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintVertical_bias="0.35">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_circulo_dourado" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_megafone" />
+    </FrameLayout>
 
     <TextView
         android:id="@+id/txtTituloBotao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/poppins_bold"
         android:text="Botão de Emergência"
         android:textColor="#1E3F20"
-        android:textSize="24sp"
-        android:fontFamily="@font/poppins_bold"
+        android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEmergencia" />
+        app:layout_constraintTop_toBottomOf="@+id/containerBotao" />
 
     <TextView
         android:id="@+id/txtInstrucao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/poppins_regular"
         android:text="Pressione por três segundos"
         android:textColor="#1E3F20"
         android:textSize="18sp"
-        android:fontFamily="@font/poppins_regular"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTituloBotao" />
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#1E3F20"
+        app:elevation="8dp"
+        app:itemIconTint="#FFFFFF"
+        app:itemIconSize="38dp"
+        app:labelVisibilityMode="unlabeled"
+        app:itemRippleColor="#4DFFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,7 +10,7 @@
     tools:context=".SplashActivity">
 
     <FrameLayout
-        android:id="@+id/frameLogo"
+        android:id="@+id/layoutLogoCompleto"
         android:layout_width="260dp"
         android:layout_height="260dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,28 +26,25 @@
 
         <ImageView
             android:id="@+id/imgArcoDourado"
-            android:layout_width="264dp"
-            android:layout_height="260dp"
-            android:layout_gravity="center"
-            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
             android:src="@drawable/ic_logo_artemis" />
-
     </FrameLayout>
 
     <TextView
         android:id="@+id/txtAppTitleSplash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="22dp"
         android:fontFamily="@font/cinzel_bold"
-        android:text="Alerta Àrtemis"
+        android:text="Alerta Ártemis"
         android:textColor="#1E3F20"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLogo" />
+        app:layout_constraintTop_toBottomOf="@+id/layoutLogoCompleto" />
 
     <ProgressBar
         android:id="@+id/progressBar"

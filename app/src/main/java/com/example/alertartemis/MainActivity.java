@@ -130,14 +130,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         try {
-            // 1. Feedback visual imediato
+            // feedback visual imediato
             Toast.makeText(this, "Iniciando Protocolo Artemis. Localizando...", Toast.LENGTH_SHORT).show();
 
-            // 2. Instancia o cliente do Google (Fused)
+            // instancia o cliente do google
             com.google.android.gms.location.FusedLocationProviderClient fusedLocationClient =
                     com.google.android.gms.location.LocationServices.getFusedLocationProviderClient(this);
 
-            // 3. Pede a localização atual
+            // localização atual
             fusedLocationClient.getCurrentLocation(
                     com.google.android.gms.location.Priority.PRIORITY_BALANCED_POWER_ACCURACY,
                     null
@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
                         if (lastLoc != null) {
                             enviarSmsComLocalizacao(lastLoc);
                         } else {
-                            // PLANO C: Envia alerta básico sem GPS
+                            // envia alerta básico sem GPS
                             String msg = "ALERTA ARTEMIS! Preciso de ajuda urgente! (Localização exata indisponível).";
                             enviarSmsParaRedeDeApoio(msg);
                             Toast.makeText(this, "Localização não encontrada. Enviando alerta básico...", Toast.LENGTH_LONG).show();

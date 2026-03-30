@@ -1,5 +1,6 @@
 package com.example.alertartemis;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,8 +17,6 @@ public class MainActivity extends AppCompatActivity {
     // Cronômetro de 3 segundos
     private Handler cronometro = new Handler(Looper.getMainLooper());
     private Runnable acaoEmergencia;
-
-    // O tocador de áudio
     private MediaPlayer tocadorDeSom;
 
     @Override
@@ -25,10 +24,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // 1. Busca do botão pelo ID
+        // Busca do botão pelo ID
         FrameLayout btnEmergencia = findViewById(R.id.containerBotao);
 
-        // 2. Coloca o Sensor de Toque nele
+        // Sensor de toque
         btnEmergencia.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -64,6 +63,18 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        // LIGANDO A NAVEGAÇÃO: Faz o ícone do telefone abrir a Tela 3
+        FrameLayout btnNavContatos = findViewById(R.id.btnNavContatos);
+        if (btnNavContatos != null) {
+            btnNavContatos.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent irParaContatos = new Intent(MainActivity.this, ContatosActivity.class);
+                    startActivity(irParaContatos);
+                }
+            });
+        }
     }
 
     private void dispararAlarme() {

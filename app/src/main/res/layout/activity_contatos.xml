@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F5F0"
+    tools:context=".ContatosActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_wallpaper_artemis" />
+
+
+    <ImageView
+        android:id="@+id/bg_watermark"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_wallpaper_artemis"
+        android:alpha="0.05" />
+
+    <LinearLayout
+        android:id="@+id/barraSuperiorContatos"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#1E3F20"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cinzel_bold"
+            android:text="Rede de Apoio"
+            android:textColor="#f2ebde"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/barraSuperiorContatos"
+        app:layout_constraintBottom_toTopOf="@id/barraInferiorCustomizada"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Gerenciar contatos"
+                android:textColor="#1E3F20"
+                android:textSize="22sp"
+                android:layout_marginBottom="16dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#889589"
+                android:layout_marginBottom="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/headerContato1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="16dp"
+                        android:background="?attr/selectableItemBackground">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_bold"
+                            android:text="Contato 1"
+                            android:textColor="#f2ebde"
+                            android:textSize="18sp"/>
+                        <TextView
+                            android:id="@+id/txtSeta1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="▼"
+                            android:textColor="#f2ebde"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/bodyContato1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:visibility="gone">
+                        <EditText
+                            android:id="@+id/inputNome1"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:hint="Nome..."
+                            android:textColor="#f2ebde"
+                            android:textColorHint="#f2ebde"
+                            android:backgroundTint="#f2ebde"
+                            android:fontFamily="@font/poppins_regular"/>
+                        <EditText
+                            android:id="@+id/inputTel1"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="8dp"
+                            android:inputType="phone"
+                            android:hint="Telefone..."
+                            android:textColor="#f2ebde"
+                            android:textColorHint="#f2ebde"
+                            android:backgroundTint="#f2ebde"
+                            android:fontFamily="@font/poppins_regular"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#889589"
+                android:layout_marginBottom="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/headerContato2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="16dp"
+                        android:background="?attr/selectableItemBackground">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_bold"
+                            android:text="Contato 2"
+                            android:textColor="#f2ebde"
+                            android:textSize="18sp"/>
+                        <TextView
+                            android:id="@+id/txtSeta2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="▼"
+                            android:textColor="#f2ebde"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/bodyContato2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:visibility="gone">
+                        <EditText
+                            android:id="@+id/inputNome2"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:hint="Nome..."
+                            android:textColor="#f2ebde"
+                            android:textColorHint="#f2ebde"
+                            android:backgroundTint="#f2ebde"
+                            android:fontFamily="@font/poppins_regular"/>
+                        <EditText
+                            android:id="@+id/inputTel2"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="8dp"
+                            android:inputType="phone"
+                            android:hint="Telefone..."
+                            android:textColor="#f2ebde"
+                            android:textColorHint="#f2ebde"
+                            android:backgroundTint="#f2ebde"
+                            android:fontFamily="@font/poppins_regular"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#889589"
+                android:layout_marginBottom="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/headerContato3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="16dp"
+                        android:background="?attr/selectableItemBackground">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_bold"
+                            android:text="Contato 3"
+                            android:textColor="#f2ebde"
+                            android:textSize="18sp"/>
+                        <TextView
+                            android:id="@+id/txtSeta3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="▼"
+                            android:textColor="#f2ebde"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/bodyContato3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:visibility="gone">
+                        <EditText
+                            android:id="@+id/inputNome3"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:hint="Nome..."
+                            android:textColor="#f2ebde"
+                            android:textColorHint="#f2ebde"
+                            android:backgroundTint="#f2ebde"
+                            android:fontFamily="@font/poppins_regular"/>
+                        <EditText
+                            android:id="@+id/inputTel3"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="8dp"
+                            android:inputType="phone"
+                            android:hint="Telefone..."
+                            android:textColor="#f2ebde"
+                            android:textColorHint="#f2ebde"
+                            android:backgroundTint="#f2ebde"
+                            android:fontFamily="@font/poppins_regular"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnSalvarContatos"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#d2b479"
+                android:text="SALVAR CONTATOS"
+                android:textColor="#1E3F20"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins_bold"
+                app:cornerRadius="8dp"
+                android:layout_marginBottom="24dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/barraInferiorCustomizada"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#1E3F20"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <FrameLayout
+            android:id="@+id/btnNavHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless">
+            <ImageView
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_home_unfilled"
+                app:tint="#f2ebde" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="#33FFFFFF" />
+
+        <FrameLayout
+            android:id="@+id/btnNavContatos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless">
+            <ImageView
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_phone_filled"
+                app:tint="#f2ebde" />
+        </FrameLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

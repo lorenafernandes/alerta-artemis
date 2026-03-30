@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/cinzel_bold"
             android:text="Alerta Ártemis"
-            android:textColor="#FFFFFF"
+            android:textColor="#f2ebde"
             android:textSize="26sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -42,7 +42,7 @@
         android:id="@+id/containerBotao"
         android:layout_width="280dp"
         android:layout_height="280dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toTopOf="@+id/barraInferiorCustomizada"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/barraSuperior"
@@ -88,16 +88,52 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTituloBotao" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
+    <LinearLayout
+        android:id="@+id/barraInferiorCustomizada"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="#1E3F20"
-        app:elevation="8dp"
-        app:itemIconTint="#FFFFFF"
-        app:itemIconSize="38dp"
-        app:labelVisibilityMode="unlabeled"
-        app:itemRippleColor="#4DFFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <FrameLayout
+            android:id="@+id/btnNavHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless">
+            <ImageView
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_home_filled"
+                app:tint="#f2ebde" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="#33FFFFFF" />
+
+        <FrameLayout
+            android:id="@+id/btnNavContatos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless">
+            <ImageView
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_phone_unfilled"
+                app:tint="#f2ebde" />
+        </FrameLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
